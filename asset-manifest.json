@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/shambala_homes/static/css/main.c632ca2b.css",
+    "main.js": "/shambala_homes/static/js/main.261f6004.js",
+    "static/js/453.09cae012.chunk.js": "/shambala_homes/static/js/453.09cae012.chunk.js",
+    "index.html": "/shambala_homes/index.html",
+    "main.c632ca2b.css.map": "/shambala_homes/static/css/main.c632ca2b.css.map",
+    "main.261f6004.js.map": "/shambala_homes/static/js/main.261f6004.js.map",
+    "453.09cae012.chunk.js.map": "/shambala_homes/static/js/453.09cae012.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c632ca2b.css",
+    "static/js/main.261f6004.js"
+  ]
+}
