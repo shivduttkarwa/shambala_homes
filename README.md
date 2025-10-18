@@ -1,3 +1,18 @@
+# Shambala Homes - Landscaping Website
+
+A modern, fully responsive React + TypeScript landscaping website with beautiful animations and Strapi CMS integration support.
+
+## ✨ Features
+
+- **Modern React + TypeScript** - Type-safe, component-based architecture
+- **GSAP Animations** - Smooth, professional animations including typed text, brick wall effect, and particle bursts
+- **Swiper Integration** - Beautiful image slider modal for service details
+- **Fully Responsive** - Optimized for all devices from mobile to desktop
+- **Strapi CMS Ready** - Built-in service layer for easy CMS integration
+- **Clean Component Structure** - Modular, reusable components
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
