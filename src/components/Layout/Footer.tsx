@@ -29,16 +29,16 @@ const Footer: React.FC = () => {
                 Creating timeless outdoor spaces that blend natural beauty with sophisticated design.
               </p>
               <div className="footer-social">
-                <a href="#" className="social-link" aria-label="Facebook">
+                <a href="https://www.facebook.com" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">f</span>
                 </a>
-                <a href="#" className="social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">ig</span>
                 </a>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">in</span>
                 </a>
-                <a href="#" className="social-link" aria-label="Twitter">
+                <a href="https://twitter.com" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">tw</span>
                 </a>
               </div>
@@ -47,22 +47,22 @@ const Footer: React.FC = () => {
             <div className="footer-column">
               <h4 className="footer-title">Services</h4>
               <ul className="footer-links">
-                <li><a href="#">Garden Design</a></li>
-                <li><a href="#">Landscape Architecture</a></li>
-                <li><a href="#">Outdoor Living Spaces</a></li>
-                <li><a href="#">Sustainable Gardens</a></li>
-                <li><a href="#">Water Features</a></li>
+                <li><a href="/shambala_homes/services/garden-design">Garden Design</a></li>
+                <li><a href="/shambala_homes/services/landscape-architecture">Landscape Architecture</a></li>
+                <li><a href="/shambala_homes/services/outdoor-living">Outdoor Living Spaces</a></li>
+                <li><a href="/shambala_homes/services/sustainable-gardens">Sustainable Gardens</a></li>
+                <li><a href="/shambala_homes/services/water-features">Water Features</a></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4 className="footer-title">Company</h4>
               <ul className="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Portfolio</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="/shambala_homes/about">About Us</a></li>
+                <li><a href="/shambala_homes/portfolio">Our Portfolio</a></li>
+                <li><a href="/shambala_homes/testimonials">Testimonials</a></li>
+                <li><a href="/shambala_homes/careers">Careers</a></li>
+                <li><a href="/shambala_homes/blog">Blog</a></li>
               </ul>
             </div>
 
@@ -91,11 +91,11 @@ const Footer: React.FC = () => {
             <div className="footer-copyright">
               <p>&copy; {new Date().getFullYear()} Shambala Homes. All rights reserved.</p>
               <div className="footer-legal">
-                <a href="#">Privacy Policy</a>
+                <a href="/shambala_homes/privacy">Privacy Policy</a>
                 <span className="separator">|</span>
-                <a href="#">Terms of Service</a>
+                <a href="/shambala_homes/terms">Terms of Service</a>
                 <span className="separator">|</span>
-                <a href="#">Cookie Policy</a>
+                <a href="/shambala_homes/cookies">Cookie Policy</a>
               </div>
             </div>
           </div>
