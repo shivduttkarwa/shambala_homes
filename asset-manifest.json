@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shambala_homes/static/css/main.c632ca2b.css",
-    "main.js": "/shambala_homes/static/js/main.45e7a307.js",
+    "main.css": "/shambala_homes/static/css/main.71e176b9.css",
+    "main.js": "/shambala_homes/static/js/main.6d1d611a.js",
     "static/js/453.09cae012.chunk.js": "/shambala_homes/static/js/453.09cae012.chunk.js",
     "index.html": "/shambala_homes/index.html",
-    "main.c632ca2b.css.map": "/shambala_homes/static/css/main.c632ca2b.css.map",
-    "main.45e7a307.js.map": "/shambala_homes/static/js/main.45e7a307.js.map",
+    "main.71e176b9.css.map": "/shambala_homes/static/css/main.71e176b9.css.map",
+    "main.6d1d611a.js.map": "/shambala_homes/static/js/main.6d1d611a.js.map",
     "453.09cae012.chunk.js.map": "/shambala_homes/static/js/453.09cae012.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c632ca2b.css",
-    "static/js/main.45e7a307.js"
+    "static/css/main.71e176b9.css",
+    "static/js/main.6d1d611a.js"
   ]
 }
