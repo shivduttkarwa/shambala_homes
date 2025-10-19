@@ -156,7 +156,7 @@
 
 .blog-extra-image {
   width: 100%;
-  max-width: 300px;
+  /* max-width: 300px; */
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }

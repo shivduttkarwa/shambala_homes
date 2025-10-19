@@ -22,47 +22,49 @@ interface HorizontalCarouselProps {
   slides?: SlideData[];
 }
 
+const publicUrl = process.env.PUBLIC_URL || '';
+
 const defaultSlides: SlideData[] = [
   {
     id: 1,
     title: 'Garden Design',
     description: 'Transform your outdoor space with professional landscaping services tailored to your vision.',
-    image: '/images/1.jpg',
+  image: `${publicUrl}/images/1.jpg`,
     link: '#'
   },
   {
     id: 2,
     title: 'Lawn Care',
     description: 'Keep your lawn healthy and vibrant year-round with our expert maintenance programs.',
-    image: '/images/2.jpg',
+  image: `${publicUrl}/images/2.jpg`,
     link: '#'
   },
   {
     id: 3,
     title: 'Tree Services',
     description: 'Expert tree trimming, removal, and maintenance for the safety and beauty of your property.',
-    image: '/images/3.jpg',
+  image: `${publicUrl}/images/3.jpg`,
     link: '#'
   },
   {
     id: 4,
     title: 'Irrigation Systems',
     description: 'Smart water systems for efficient garden care that saves water and maintains beauty.',
-    image: '/images/4.jpg',
+  image: `${publicUrl}/images/4.jpg`,
     link: '#'
   },
   {
     id: 5,
     title: 'Hardscaping',
     description: 'Beautiful patios, walkways, and outdoor structures that enhance your living space.',
-    image: '/images/5.jpg',
+  image: `${publicUrl}/images/5.jpg`,
     link: '#'
   },
   {
     id: 6,
     title: 'Outdoor Lighting',
     description: 'Illuminate your landscape with elegant lighting solutions for evening beauty.',
-    image: '/images/6.jpg',
+  image: `${publicUrl}/images/6.jpg`,
     link: '#'
   }
 ];

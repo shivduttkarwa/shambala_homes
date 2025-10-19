@@ -11,6 +11,8 @@ interface StudioSectionProps {
   }[];
 }
 
+const publicUrl = process.env.PUBLIC_URL || '';
+
 const StudioSection: React.FC<StudioSectionProps> = ({
   title = "Bring your dream home to life",
   
@@ -19,13 +21,13 @@ const StudioSection: React.FC<StudioSectionProps> = ({
     "Our experienced team combines artistic vision with horticultural expertise to design and implement landscapes that thrive in every season. From concept to completion, we're committed to exceeding your expectations.",
     "Schedule a consultation today and discover how we can bring your dream outdoor space to life."
   ],
-  images = [
+    images = [
     {
-      src: "/images/8.jpg",
+      src: `${publicUrl}/images/l2.jpg`,
       alt: "Beautiful landscaped garden"
     },
     {
-      src: "/images/9.jpg",
+      src: `${publicUrl}/images/l5.jpg`,
       alt: "Modern outdoor design"
     }
   ]

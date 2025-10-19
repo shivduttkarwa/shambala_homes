@@ -17,6 +17,8 @@ interface QualityHomesProps {
   ctaLink?: string;
 }
 
+const publicUrl = process.env.PUBLIC_URL || '';
+
 const QualityHomes: React.FC<QualityHomesProps> = ({
   mainTitle = "Building quality homes for over 40 years",
   features = [
@@ -24,28 +26,28 @@ const QualityHomes: React.FC<QualityHomesProps> = ({
       icon: "✓",
       title: "Master of design",
       description: "Our homes are designed to celebrate you. This is why we continually strive to create innovative, award-winning designs that help you make the most of your home and the life you live in it.",
-      image: "/images/1.jpg"
+  image: `${publicUrl}/images/1.jpg`
     },
     {
       icon: "✓",
       title: "Lifetime structural guarantee",
       description: "Every Shambala Homes home is backed by a Lifetime Structural Guarantee*, so you can build with confidence and peace of mind that it will stand the test of time.",
-      image: "/images/2.jpg"
+  image: `${publicUrl}/images/2.jpg`
     },
     {
       icon: "✓",
       title: "6 stage quality assurance",
       description: "Our homes may have changed over the years but our commitment to excellence hasn't. Our rigorous quality assurance process ensures every Shambala Homes home is built to the highest standard.",
-      image: "/images/3.jpg"
+  image: `${publicUrl}/images/3.jpg`
     },
     {
       icon: "✓",
       title: "Australia's no.1 home builder",
       description: "We believe no one else designs and builds as well as us and, as Australia's No.1 home builder for the ninth year running, we must be doing something right.",
-      image: "/images/4.jpg"
+  image: `${publicUrl}/images/4.jpg`
     }
   ],
-  imageSrc = "/images/2.jpg",
+  imageSrc = `${publicUrl}/images/2.jpg`,
   imageAlt = "Quality Home Interior",
   ctaText = "Learn more about building with Shambala Homes",
   ctaLink = "#"

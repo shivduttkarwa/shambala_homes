@@ -1,6 +1,9 @@
 import React from 'react';
 import './DreamHomeJourney.css';
 
+
+const publicUrl = process.env.PUBLIC_URL || '';
+
 interface DreamHomeJourneyProps {
   title?: string;
   description?: string;
@@ -27,7 +30,7 @@ const DreamHomeJourney: React.FC<DreamHomeJourneyProps> = ({
     text: "Explore house & land packages",
     link: "#"
   },
-  backgroundImage = "/images/3.jpg"
+  backgroundImage = `${publicUrl}/images/wooden-bg.jpg`
 }) => {
   return (
     <section 

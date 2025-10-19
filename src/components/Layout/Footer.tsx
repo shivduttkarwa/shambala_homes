@@ -31,16 +31,16 @@ const Footer: React.FC = () => {
                 Creating timeless outdoor spaces that blend natural beauty with sophisticated design.
               </p>
               <div className="footer-social">
-                <a href="https://www.facebook.com" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com" className="social-link facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">f</span>
                 </a>
-                <a href="https://www.instagram.com" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com" className="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">ig</span>
                 </a>
-                <a href="https://www.linkedin.com" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com" className="social-link linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">in</span>
                 </a>
-                <a href="https://twitter.com" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com" className="social-link twitter" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">tw</span>
                 </a>
               </div>

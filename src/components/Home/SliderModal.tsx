@@ -99,15 +99,19 @@ const SliderModal: React.FC<SliderModalProps> = ({
       <div className="slider-section">
         <div className="swiper">
           <div className="swiper-wrapper">
-            {serviceBoxes.map((box, index) => (
-              <div key={box.id} className="swiper-slide">
-                <h2 className={`slider-title ${getTitleClass(index)}`}>
-                  {box.title}
-                </h2>
-                <img src={box.image} alt={box.title} />
-                <div className="slide-description">{box.description}</div>
-              </div>
-            ))}
+            {serviceBoxes.map((box, index) => {
+              const title = box.title || `Service ${index + 1}`;
+              const description = box.description || '';
+              return (
+                <div key={box.id} className="swiper-slide">
+                  <h2 className={`slider-title ${getTitleClass(index)}`}>
+                    {title}
+                  </h2>
+                  <img src={box.image} alt={title} />
+                  <div className="slide-description">{description}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

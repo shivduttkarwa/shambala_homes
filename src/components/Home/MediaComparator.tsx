@@ -31,6 +31,7 @@ const MediaComparator: React.FC<MediaComparatorProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const swiperWrapperRef = useRef<HTMLDivElement>(null);
+  const publicUrl = process.env.PUBLIC_URL || '';
   const progressRef = useRef({ value: 0 });
 
   useEffect(() => {
@@ -167,12 +168,35 @@ const MediaComparator: React.FC<MediaComparatorProps> = ({
                 <div key={index} className="swiper-slide">
                   <div className="slide-inner">
                     <div className="stack-container media-container">
-                      <img 
-                        className="fit-cover middle-center" 
-                        src={slide.image}
-                        alt={slide.title}
-                        draggable="false"
-                      />
+                      {
+                        (() => {
+                          const raw = slide.image || '';
+                          // Leave absolute and leading-root paths unchanged to avoid
+                          // interfering with other layout logic that expects '/images/*'.
+                          if (/^(https?:)?\/\//i.test(raw) || raw.startsWith('/')) {
+                            return (
+                              <img
+                                className="fit-cover middle-center"
+                                src={raw}
+                                alt={slide.title}
+                                draggable="false"
+                              />
+                            );
+                          }
+
+                          // Otherwise prefix with PUBLIC_URL so relative paths resolve
+                          // correctly both in dev and when served under a repo subpath.
+                          const imgSrc = `${publicUrl}/${raw.replace(/^\/+/, '')}`;
+                          return (
+                            <img
+                              className="fit-cover middle-center"
+                              src={imgSrc}
+                              alt={slide.title}
+                              draggable="false"
+                            />
+                          );
+                        })()
+                      }
                       <div className="media-overlay-stack">
                         <div className="wrapper wrapper-xl">
                           <div className="text-container">

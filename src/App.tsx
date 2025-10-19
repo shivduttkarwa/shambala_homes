@@ -15,19 +15,21 @@ import { defaultHeroData } from './data/defaultData';
 
 function App() {
   // Media Comparator slides data
+  const publicUrl = process.env.PUBLIC_URL || '';
+
   const landscapingSlides = [
     {
-      image: '/images/1.jpg',
+      image: `${publicUrl}/images/l3.jpg`,
       title: 'Garden Design & Planning',
       subtitle: 'Transform your outdoor space with expert design'
     },
     {
-      image: '/images/2.jpg',
+      image: `${publicUrl}/images/l1.jpg`,
       title: 'Professional Lawn Care',
       subtitle: 'Maintain a lush, healthy lawn year-round'
     },
     {
-      image: '/images/3.jpg',
+      image: `${publicUrl}/images/l4.jpg`,
       title: 'Hardscaping Solutions',
       subtitle: 'Patios, walkways, and retaining walls'
     }
@@ -35,17 +37,17 @@ function App() {
 
   const maintenanceSlides = [
     {
-      image: '/images/4.jpg',
+      image: `${publicUrl}/images/hero.jpg`,
       title: 'Tree & Plant Care',
       subtitle: 'Expert pruning and plant health services'
     },
     {
-      image: '/images/5.jpg',
+      image: `${publicUrl}/images/5.jpg`,
       title: 'Irrigation Systems',
       subtitle: 'Efficient watering solutions for your landscape'
     },
     {
-      image: '/images/6.jpg',
+      image: `${publicUrl}/images/6.jpg`,
       title: 'Seasonal Maintenance',
       subtitle: 'Year-round care for your outdoor spaces'
     }

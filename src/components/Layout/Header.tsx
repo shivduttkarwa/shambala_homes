@@ -43,12 +43,14 @@ const Header: React.FC<HeaderProps> = ({ menuItems = defaultMenuItems }) => {
         <a href="#home" className="logo" onClick={handleMenuClick}>
           Shambala Homes
         </a>
-        <div
+        <button
           className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          <span></span>
-        </div>
+          <span className="menu-text">{isMenuOpen ? 'CLOSE' : 'MENU'}</span>
+        </button>
       </header>
 
       <div className={`fullpage-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -64,6 +66,8 @@ const Header: React.FC<HeaderProps> = ({ menuItems = defaultMenuItems }) => {
               ))}
             </ul>
           </nav>
+
+          {/* removed duplicate close button - header toggle handles open/close */}
         </div>
       </div>
     </>
