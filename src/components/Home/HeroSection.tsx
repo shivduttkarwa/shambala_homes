@@ -370,7 +370,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       clearInterval(cycleInterval);
       clearTimeout(fallbackTimer);
     };
-  }, [typedTexts]);
+  }, [typedTexts, isPaused]);
 
   // Handle pause/resume of text cycling
   useEffect(() => {
