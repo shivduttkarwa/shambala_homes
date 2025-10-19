@@ -2,8 +2,10 @@ import React from 'react';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const publicUrl = process.env.PUBLIC_URL || '';
+
   return (
-    <footer className="footer" style={{ backgroundImage: 'url(/images/footer.jpg)' }}>
+    <footer className="footer" style={{ backgroundImage: `url(${publicUrl}/images/footer.jpg)` }}>
       {/* Abstract Architectural Background */}
       <div className="footer-background">
         <div className="arch-pattern arch-pattern-1"></div>
@@ -16,7 +18,7 @@ const Footer: React.FC = () => {
           <div className="arch-line arch-line-4"></div>
         </div>
         {/* Abstract Background Element */}
-        <div className="footer-abstract-bg" style={{ backgroundImage: 'url(/images/footer-bg.jpg)' }}></div>
+  <div className="footer-abstract-bg" style={{ backgroundImage: `url(${publicUrl}/images/footer-bg.jpg)` }}></div>
       </div>
 
       <div className="footer-content">
@@ -47,22 +49,22 @@ const Footer: React.FC = () => {
             <div className="footer-column">
               <h4 className="footer-title">Services</h4>
               <ul className="footer-links">
-                <li><a href="/shambala_homes/services/garden-design">Garden Design</a></li>
-                <li><a href="/shambala_homes/services/landscape-architecture">Landscape Architecture</a></li>
-                <li><a href="/shambala_homes/services/outdoor-living">Outdoor Living Spaces</a></li>
-                <li><a href="/shambala_homes/services/sustainable-gardens">Sustainable Gardens</a></li>
-                <li><a href="/shambala_homes/services/water-features">Water Features</a></li>
+                <li><a href={`${publicUrl}/services/garden-design`}>Garden Design</a></li>
+                <li><a href={`${publicUrl}/services/landscape-architecture`}>Landscape Architecture</a></li>
+                <li><a href={`${publicUrl}/services/outdoor-living`}>Outdoor Living Spaces</a></li>
+                <li><a href={`${publicUrl}/services/sustainable-gardens`}>Sustainable Gardens</a></li>
+                <li><a href={`${publicUrl}/services/water-features`}>Water Features</a></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4 className="footer-title">Company</h4>
               <ul className="footer-links">
-                <li><a href="/shambala_homes/about">About Us</a></li>
-                <li><a href="/shambala_homes/portfolio">Our Portfolio</a></li>
-                <li><a href="/shambala_homes/testimonials">Testimonials</a></li>
-                <li><a href="/shambala_homes/careers">Careers</a></li>
-                <li><a href="/shambala_homes/blog">Blog</a></li>
+                <li><a href={`${publicUrl}/about`}>About Us</a></li>
+                <li><a href={`${publicUrl}/portfolio`}>Our Portfolio</a></li>
+                <li><a href={`${publicUrl}/testimonials`}>Testimonials</a></li>
+                <li><a href={`${publicUrl}/careers`}>Careers</a></li>
+                <li><a href={`${publicUrl}/blog`}>Blog</a></li>
               </ul>
             </div>
 
@@ -91,11 +93,11 @@ const Footer: React.FC = () => {
             <div className="footer-copyright">
               <p>&copy; {new Date().getFullYear()} Shambala Homes. All rights reserved.</p>
               <div className="footer-legal">
-                <a href="/shambala_homes/privacy">Privacy Policy</a>
+                <a href={`${publicUrl}/privacy`}>Privacy Policy</a>
                 <span className="separator">|</span>
-                <a href="/shambala_homes/terms">Terms of Service</a>
+                <a href={`${publicUrl}/terms`}>Terms of Service</a>
                 <span className="separator">|</span>
-                <a href="/shambala_homes/cookies">Cookie Policy</a>
+                <a href={`${publicUrl}/cookies`}>Cookie Policy</a>
               </div>
             </div>
           </div>
