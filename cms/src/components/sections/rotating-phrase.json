@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_rotating_phrases",
+  "info": {
+    "displayName": "Rotating Phrase"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

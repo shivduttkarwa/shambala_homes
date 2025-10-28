@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_hero_settings",
+  "info": {
+    "displayName": "Hero Settings"
+  },
+  "options": {},
+  "attributes": {
+    "autoplay": {
+      "type": "boolean"
+    },
+    "slideIntervalMs": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}
