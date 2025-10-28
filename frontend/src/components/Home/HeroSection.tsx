@@ -31,10 +31,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     'relaxing spaces',
     'beautiful landscapes'
   ],
-  description = 'Transform your outdoor space into a sustainable paradise with our expert landscaping services.',
   ctaText = 'Get a Free Site Visit',
   ctaLink = '#contact',
-  backgroundImage = `${process.env.PUBLIC_URL || ''}/images/12.jpg`,
+  backgroundImage = `${import.meta.env.BASE_URL}images/12.jpg`,
   serviceBoxes = []
 }) => {
   const textRef = useRef<HTMLSpanElement>(null);
