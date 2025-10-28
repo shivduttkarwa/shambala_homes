@@ -11,8 +11,6 @@ interface Feature {
 interface QualityHomesProps {
   mainTitle?: string;
   features?: Feature[];
-  imageSrc?: string;
-  imageAlt?: string;
   ctaText?: string;
   ctaLink?: string;
 }
