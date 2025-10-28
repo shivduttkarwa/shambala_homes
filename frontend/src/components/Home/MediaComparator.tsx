@@ -31,7 +31,7 @@ const MediaComparator: React.FC<MediaComparatorProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const swiperWrapperRef = useRef<HTMLDivElement>(null);
-  const publicUrl = '/';
+  const publicUrl = import.meta.env.BASE_URL;
 
   const progressRef = useRef({ value: 0 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 const Footer: React.FC = () => {
-  const publicUrl = '/';
+  const publicUrl = import.meta.env.BASE_URL;
 
   return (
     <footer className="footer" style={{ backgroundImage: `url(${publicUrl}images/footer.jpg)` }}>

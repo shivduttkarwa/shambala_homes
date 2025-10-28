@@ -12,7 +12,7 @@ interface StudioSectionProps {
 }
 
 
-const publicUrl = '/';
+const publicUrl = import.meta.env.BASE_URL;
 
 
 const StudioSection: React.FC<StudioSectionProps> = ({

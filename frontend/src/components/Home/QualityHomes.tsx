@@ -15,7 +15,7 @@ interface QualityHomesProps {
   ctaLink?: string;
 }
 
-const publicUrl = '/';
+const publicUrl = import.meta.env.BASE_URL;
 
 
 const QualityHomes: React.FC<QualityHomesProps> = ({

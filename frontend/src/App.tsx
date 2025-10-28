@@ -14,7 +14,7 @@ import { defaultHeroData } from './data/defaultData';
 
 function App() {
   // Media Comparator slides data
-  const publicUrl = '/';
+  const publicUrl = import.meta.env.BASE_URL;
 
 
 

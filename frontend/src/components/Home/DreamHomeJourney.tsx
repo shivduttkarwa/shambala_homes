@@ -2,7 +2,7 @@ import React from 'react';
 import './DreamHomeJourney.css';
 
 
-const publicUrl = '/';
+const publicUrl = import.meta.env.BASE_URL;
 
 
 interface DreamHomeJourneyProps {

@@ -22,7 +22,7 @@ interface HorizontalCarouselProps {
   slides?: SlideData[];
 }
 
-const publicUrl = '/';
+const publicUrl = import.meta.env.BASE_URL;
 
 
 const defaultSlides: SlideData[] = [
