@@ -48,8 +48,6 @@ const QualityHomes: React.FC<QualityHomesProps> = ({
   image: `${publicUrl}images/4.jpg`
     }
   ],
-  imageSrc = `${publicUrl}images/2.jpg`,
-  imageAlt = "Quality Home Interior",
   ctaText = "Learn more about building with Shambala Homes",
   ctaLink = "#"
 }) => {
