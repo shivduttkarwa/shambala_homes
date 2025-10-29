@@ -3,9 +3,9 @@ import { fetchHomePage, mediaUrl } from '@/lib/strapi';
 
 // Match your HeroSection props (keep as-is in your component)
 export type HeroSectionProps = {
-  mainTitle?: string[];        // e.g. ["WE","MAKE"]
-  typedTexts?: string[];       // rotating lines
-  description?: string;        // (unused yet — stays optional)
+  mainTitle?: string[];
+  typedTexts?: string[];
+  description?: string;
   ctaText?: string;
   ctaLink?: string;
   backgroundImage?: string;
@@ -15,6 +15,7 @@ export type HeroSectionProps = {
     title: string;
     description: string;
     image: string;
+    imageSmall?: string; // Add thumbnail for lazy loading
   }>;
 };
 
@@ -27,14 +28,14 @@ type StrapiHero = {
   backgroundImage?: any;
   cta?: { label?: string; url?: string };
 
-  // circle gallery coming from Strapi
   circleGallery?: Array<{
     id: number;
-    image?: any;
+    heading?: string;
+    description?: string;
+    image?: any[];
     alt?: string;
   }>;
 
-  // optional
   heroSettings?: any;
 };
 
@@ -53,21 +54,39 @@ export function useHome() {
     (async () => {
       try {
         const data = (await fetchHomePage()) as StrapiPage | null;
+        console.log('Fetched data:', data);
         setPage(data);
 
         const sections = data?.sections ?? [];
         const hero = sections.find((s) => (s.__component ?? s.component) === 'sections.hero');
+        console.log('Hero section:', hero);
+        console.log('circleGallery:', hero?.circleGallery);
 
         if (hero) {
           // Map Strapi → your component prop shape
           const serviceBoxes =
-            hero.circleGallery?.map((item, idx) => ({
-              id: item.id,
-              index: idx,
-              title: item.alt || `Item ${idx + 1}`,
-              description: '', // keep empty unless you add a field in Strapi
-              image: mediaUrl(item.image) ?? '',
-            })) ?? [];
+            hero.circleGallery?.map((item, idx) => {
+              const imageData = item.image?.[0];
+              
+              // Use optimized formats: thumbnail > small > medium > original
+              const thumbnail = imageData?.formats?.thumbnail?.url;
+              const small = imageData?.formats?.small?.url;
+              const medium = imageData?.formats?.medium?.url;
+              const original = imageData?.url;
+
+              return {
+                id: item.id,
+                index: idx,
+                title: item.heading || `Item ${idx + 1}`,
+                description: item.description || '',
+                // Use small/medium for display
+                image: mediaUrl(medium || small || original) ?? '',
+                // Use thumbnail for initial load
+                imageSmall: mediaUrl(thumbnail || small) ?? '',
+              };
+            }) ?? [];
+
+          console.log('Service boxes with optimized images:', serviceBoxes);
 
           setHeroProps({
             mainTitle: hero.heading ? hero.heading.split(' ') : undefined,
@@ -80,6 +99,7 @@ export function useHome() {
           });
         } else {
           setHeroProps(null);
+          console.log('No hero section found, set heroProps to null');
         }
       } catch (e) {
         console.error(e);

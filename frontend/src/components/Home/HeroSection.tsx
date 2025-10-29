@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SliderModal from './SliderModal';
-
+import { LazyImage } from '@/components/LazyImage';
 gsap.registerPlugin(ScrollTrigger);
 
 interface ServiceBox {
@@ -11,6 +11,7 @@ interface ServiceBox {
   title: string;
   description: string;
   image: string;
+  imageSmall?: string;
 }
 
 interface HeroSectionProps {
@@ -174,7 +175,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       });
     };
 
-    // Animate "WE MAKE" text
+    // Animate "Hero Title" text
     const animateWeMakeSimple = (callback: () => void) => {
       const spans = h1Element.querySelectorAll('.d-flex span');
       gsap.to(spans, {
@@ -563,7 +564,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={() => handleBoxClick(box.index)}
               >
                 <div className="bg-img">
-                  <img src={box.image} alt={box.title} />
+                  <LazyImage
+                   src={box.image}
+                   placeholder={box.imageSmall}
+                   alt={box.title}
+                   className="..."
+                               />
                 </div>
               </div>
             ))}

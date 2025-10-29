@@ -58,8 +58,7 @@ function App() {
       subtitle: 'Year-round care for your outdoor spaces',
     },
   ];
-  console.log('heroProps.backgroundImage =', heroProps?.backgroundImage);
-  console.log('defaultHeroData.backgroundImage =', defaultHeroData.backgroundImage);
+ 
 
   return (
     <div className="App">
