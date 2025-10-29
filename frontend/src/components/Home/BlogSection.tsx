@@ -20,6 +20,8 @@ interface BlogSectionProps {
   posts?: BlogPost[];
 }
 
+const publicUrl = import.meta.env.BASE_URL;
+
 const BlogSection: React.FC<BlogSectionProps> = ({
   sectionTitle = "Design and building tips from our blog",
   ctaText = "View all blog posts",
@@ -31,7 +33,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
       date: "14 Oct, 2025",
       category: "Design Tips",
       excerpt: "Discover how to create the perfect outdoor living space with our comprehensive landscaping guide. From garden design to sustainable practices, learn everything you need to transform your backyard into a beautiful oasis.",
-      imageSrc: `/images/5.jpg`,
+      imageSrc: `${publicUrl}images/5.jpg`,
       imageAlt: "Beautiful landscaped garden",
       link: "#",
       featured: true
@@ -42,7 +44,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
       date: "12 Oct, 2025",
       category: "Sustainability",
       excerpt: "Learn how to create an environmentally friendly garden that looks beautiful and helps the planet.",
-      imageSrc: `/images/6.jpg`,
+      imageSrc: `${publicUrl}images/6.jpg`,
       imageAlt: "Sustainable garden design",
       link: "#"
     },
@@ -52,7 +54,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
       date: "10 Oct, 2025",
       category: "Outdoor Living",
       excerpt: "Explore contemporary patio designs that extend your living space and create the perfect entertainment area.",
-      imageSrc: `/images/7.jpg`,
+      imageSrc: `${publicUrl}images/7.jpg`,
       imageAlt: "Modern patio design",
       link: "#"
     }
@@ -97,7 +99,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
                     </p>
                     <div className="blog-extra-image">
                       <img 
-                        src={`/images/l4.jpg`} 
+                        src={`${publicUrl}images/14.jpg`} 
                         alt="Landscaping detail" 
                         className="blog-small-image"
                         loading="lazy"
