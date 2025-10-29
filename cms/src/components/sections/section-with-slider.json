@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_section_with_sliders",
+  "info": {
+    "displayName": "sectionWithSlider",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "SectionSubtitle": {
+      "type": "string"
+    },
+    "slider": {
+      "type": "component",
+      "component": "sections.slider",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

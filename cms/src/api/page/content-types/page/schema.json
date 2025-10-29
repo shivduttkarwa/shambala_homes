@@ -22,7 +22,8 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero"
+        "sections.hero",
+        "sections.section-with-slider"
       ]
     }
   }

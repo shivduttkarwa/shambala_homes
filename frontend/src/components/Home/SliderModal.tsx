@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import { Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css';
+import { LazyImage } from '@/components/LazyImage';
 
 interface ServiceBox {
   id: number;
@@ -9,6 +10,7 @@ interface ServiceBox {
   title: string;
   description: string;
   image: string;
+  fullImage?: string;
 }
 
 interface SliderModalProps {
@@ -107,7 +109,12 @@ const SliderModal: React.FC<SliderModalProps> = ({
                   <h2 className={`slider-title ${getTitleClass(index)}`}>
                     {title}
                   </h2>
-                  <img src={box.image} alt={title} />
+                  <LazyImage
+                    src={box.fullImage || box.image}
+                    placeholder={box.image}
+                    alt={title}
+                    className="slider-image"
+                  />
                   <div className="slide-description">{description}</div>
                 </div>
               );

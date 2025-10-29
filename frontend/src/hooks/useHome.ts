@@ -16,6 +16,7 @@ export type HeroSectionProps = {
     description: string;
     image: string;
     imageSmall?: string; // Add thumbnail for lazy loading
+    fullImage?: string; // Full resolution for slider
   }>;
 };
 
@@ -83,6 +84,8 @@ export function useHome() {
                 image: mediaUrl(medium || small || original) ?? '',
                 // Use thumbnail for initial load
                 imageSmall: mediaUrl(thumbnail || small) ?? '',
+                // Full resolution for slider
+                fullImage: mediaUrl(original) ?? '',
               };
             }) ?? [];
 

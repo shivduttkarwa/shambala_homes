@@ -12,6 +12,7 @@ interface ServiceBox {
   description: string;
   image: string;
   imageSmall?: string;
+  fullImage?: string;
 }
 
 interface HeroSectionProps {
@@ -44,6 +45,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [isSliderOpen, setIsSliderOpen] = useState(false);
   const [selectedBoxIndex, setSelectedBoxIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  // Preload full resolution images for smooth slider experience
+  useEffect(() => {
+    serviceBoxes.forEach((box) => {
+      if (box.fullImage) {
+        const img = new Image();
+        img.src = box.fullImage;
+      }
+    });
+  }, [serviceBoxes]);
 
   // Animation state refs
   const currentIndexRef = useRef(0);
@@ -410,115 +420,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     setIsPaused(false);
   };
 
-  const handleBookLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const natureEmojis = ['🍃', '🌿', '🌱', '🍀', '🌾', '🌳', '🌲', '🪴', '☘️', '🌴'];
-
-    const createParticle = (x: number, y: number) => {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.textContent = natureEmojis[Math.floor(Math.random() * natureEmojis.length)];
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      document.body.appendChild(particle);
-
-      const angle = Math.random() * Math.PI * 2;
-      const velocity = 100 + Math.random() * 150;
-      const xVel = Math.cos(angle) * velocity;
-      const yVel = Math.sin(angle) * velocity - 200;
-
-      gsap.to(particle, {
-        x: xVel,
-        y: yVel,
-        rotation: 360 + Math.random() * 720,
-        opacity: 0,
-        duration: 1.5 + Math.random() * 1,
-        ease: 'power2.out',
-        onComplete: () => particle.remove()
-      });
-    };
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-
-    // Button bounce effect
-    gsap.timeline()
-      .to(e.currentTarget, {
-        scale: 0.85,
-        y: 10,
-        duration: 0.1,
-        ease: 'power2.in'
-      })
-      .to(e.currentTarget, {
-        scale: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'elastic.out(1, 0.3)'
-      });
-
-    // Character bounce animation
-    const linkTextSpan = e.currentTarget.querySelector('.linktext');
-    if (linkTextSpan) {
-      const chars = linkTextSpan.querySelectorAll('.char');
-      chars.forEach((char, index) => {
-        gsap.timeline()
-          .to(char, {
-            y: -30,
-            duration: 0.25,
-            delay: index * 0.03,
-            ease: 'power3.out'
-          })
-          .to(char, {
-            y: 0,
-            duration: 0.35,
-            ease: 'bounce.out'
-          });
-      });
-    }
-
-    // Create burst of nature particles
-    for (let i = 0; i < 20; i++) {
-      setTimeout(() => createParticle(x, y), i * 20);
-    }
-  };
-
-  const handleBookLinkMouseEnter = () => {
-    if (bookLinkRef.current) {
-      const linkTextSpan = bookLinkRef.current.querySelector('.linktext');
-      if (linkTextSpan) {
-        const chars = linkTextSpan.querySelectorAll('.char');
-        chars.forEach((char, index) => {
-          gsap.timeline()
-            .to(char, {
-              y: -10,
-              duration: 0.3,
-              delay: index * 0.03,
-              ease: 'power2.out'
-            })
-            .to(char, {
-              y: 0,
-              duration: 0.3,
-              ease: 'power2.in'
-            });
-        });
-      }
-    }
-  };
-
-  const handleBookLinkMouseLeave = () => {
-    if (bookLinkRef.current) {
-      const linkTextSpan = bookLinkRef.current.querySelector('.linktext');
-      if (linkTextSpan) {
-        const chars = linkTextSpan.querySelectorAll('.char');
-        gsap.to(chars, {
-          y: 0,
-          duration: 0.2,
-          ease: 'power2.out',
-          overwrite: true
-        });
-      }
-    }
-  };
+  
 
   return (
     <>
@@ -542,9 +444,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             href={ctaLink}
             className="book-link"
             ref={bookLinkRef}
-            onClick={handleBookLinkClick}
-            onMouseEnter={handleBookLinkMouseEnter}
-            onMouseLeave={handleBookLinkMouseLeave}
+            
           >
             <span className="linktext">{ctaText}</span>
             <span className="arrow"></span>

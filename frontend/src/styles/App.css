@@ -1183,3 +1183,11 @@ body{
     font-weight: 400 !important;
   }
 }
+
+
+
+/* bricks are on canvas now, but keep transforms light elsewhere */
+.info-section .bg-img img { will-change: transform, opacity; transform: translateZ(0); }
+.info-section .book-link .char { display:inline-block; will-change: transform; }
+.d-flex span { display:inline-block; will-change: transform; } /* for yPercent slide-in */
+canvas { display:block; } /* avoid gap */

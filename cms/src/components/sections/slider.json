@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_sliders",
+  "info": {
+    "displayName": "slider",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subHeading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

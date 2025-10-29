@@ -72,6 +72,32 @@ export interface SectionsRotatingPhrase extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsSectionWithSlider extends Struct.ComponentSchema {
+  collectionName: 'components_sections_section_with_sliders';
+  info: {
+    displayName: 'sectionWithSlider';
+    icon: 'apps';
+  };
+  attributes: {
+    SectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    slider: Schema.Attribute.Component<'sections.slider', true>;
+  };
+}
+
+export interface SectionsSlider extends Struct.ComponentSchema {
+  collectionName: 'components_sections_sliders';
+  info: {
+    displayName: 'slider';
+    icon: 'stack';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subHeading: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -80,6 +106,8 @@ declare module '@strapi/strapi' {
       'sections.hero': SectionsHero;
       'sections.hero-settings': SectionsHeroSettings;
       'sections.rotating-phrase': SectionsRotatingPhrase;
+      'sections.section-with-slider': SectionsSectionWithSlider;
+      'sections.slider': SectionsSlider;
     }
   }
 }
